@@ -4,6 +4,7 @@ import Link from "next/link"
 import { getMentors, Mentor } from "@/lib/database"
 import { MentorSearch } from "@/components/mentor-search"
 import { MentorCard } from "@/components/mentor-card"
+import { NotificationButton } from "@/components/notification-button"
 
 export default async function MentoringPage() {
   // 데이터베이스에서 멘토 데이터 가져오기
@@ -13,7 +14,7 @@ export default async function MentoringPage() {
   } catch (error) {
     console.error('Error fetching mentors:', error)
   }
-
+ 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Top Bar */}
@@ -74,9 +75,7 @@ export default async function MentoringPage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="hover:scale-110 transition-transform duration-300">
-                <Bell className="w-4 h-4" />
-              </Button>
+              <NotificationButton />
               <Button className="bg-emerald-600 hover:bg-emerald-700 text-white hover:scale-105 transition-all duration-300">
                 로그인
               </Button>

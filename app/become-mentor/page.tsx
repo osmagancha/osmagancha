@@ -37,7 +37,6 @@ export default function BecomeMentorPage() {
             대전의 미래 과학 인재들과 여러분의 전문 지식을 나누어주세요. 정부 인증 플랫폼에서 안전하고 체계적인 멘토링을
             제공합니다.
           </p>
-          <GovernmentPartnership />
         </div>
 
         <MentorRegistrationForm />

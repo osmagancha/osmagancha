@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -365,7 +366,7 @@ export function MentorRegistrationForm() {
       <Card className="mb-8 animate-fade-in-up" style={{ animationDelay: "400ms" }}>
         <CardHeader>
           <CardTitle className="text-2xl text-slate-800 flex items-center">
-            {steps[currentStep - 1].icon({ className: "w-6 h-6 mr-2 text-indigo-600" })}
+            {React.createElement(steps[currentStep - 1].icon, { className: "w-6 h-6 mr-2 text-indigo-600" })}
             {steps[currentStep - 1].title}
           </CardTitle>
         </CardHeader>

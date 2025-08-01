@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { PremiumLogo } from "@/components/premium-logo"
 import { GovernmentPartnership } from "@/components/government-partnership"
+import { Navigation } from "@/components/navigation"
 import {
   ArrowRight,
   Users,
@@ -43,91 +44,10 @@ export default async function HomePage() {
         <div className="absolute bottom-20 left-20 w-3 h-3 bg-purple-400 rounded-full animate-float"></div>
       </div>
 
-      {/* Top Bar */}
-      <div className="bg-slate-800 text-white py-3 px-4 transform translate-y-0 animate-slide-down">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-center space-x-8 mb-8">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🇰🇷</span>
-              </div>
-              <div className="text-left">
-                <div className="text-sm font-semibold text-white">대한민국 정부</div>
-                <div className="text-xs text-gray-300">과학기술정보통신부</div>
-              </div>
-            </div>
-            <div className="w-px h-12 bg-white/30"></div>
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center shadow-lg">
-                <span className="text-2xl">🏛️</span>
-              </div>
-              <div className="text-left">
-                <div className="text-sm font-semibold text-white">대전광역시 교육청</div>
-                <div className="text-xs text-gray-300">진로교육과</div>
-              </div>
-            </div>
-          </div>
-          <GovernmentPartnership />
-        </div>
-      </div>
+
 
       {/* Main Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm animate-slide-down-delayed">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <PremiumLogo size="normal" />
-
-            {/* Main Menu */}
-            <div className="hidden lg:flex items-center space-x-8">
-              {[
-                { name: "서비스 소개", href: "/about" },
-                { name: "멘토링", href: "/mentoring" },
-                { name: "견학 프로그램", href: "/tour" },
-                { name: "요금제", href: "/pricing" },
-                { name: "멘토 되기", href: "/become-mentor" },
-              ].map((item, index) => (
-                <div key={item.name} className="relative group" style={{ animationDelay: `${index * 100}ms` }}>
-                  <Link
-                    href={item.href}
-                    className="flex items-center space-x-1 text-gray-700 hover:text-indigo-600 font-medium py-2 transition-all duration-300 hover:scale-105 animate-fade-in-up"
-                  >
-                    <span>{item.name}</span>
-                    {index < 3 && (
-                      <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
-                    )}
-                  </Link>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300"></div>
-                </div>
-              ))}
-            </div>
-
-            {/* Right Menu */}
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="hover:scale-110 transition-transform duration-300">
-                <Search className="w-4 h-4" />
-              </Button>
-              <Button variant="ghost" size="sm" className="hover:scale-110 transition-transform duration-300">
-                <Bell className="w-4 h-4" />
-              </Button>
-              <Link href="/login">
-                <Button className="bg-emerald-600 hover:bg-emerald-700 text-white hover:scale-105 transition-all duration-300">
-                  로그인
-                </Button>
-              </Link>
-              <Link href="/pricing">
-                <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white hover:scale-105 transition-all duration-300 hover:shadow-lg">
-                  <CreditCard className="w-4 h-4 mr-2" />
-                  요금제
-                </Button>
-              </Link>
-              <Button variant="ghost" className="lg:hidden">
-                <Menu className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-slate-800 via-indigo-800 to-purple-800 text-white overflow-hidden">
@@ -140,18 +60,18 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 py-20 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-              <span className="block">대전에서 시작하는</span>
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up text-center">
+              <span className="block mb-4">대전에서 시작하는</span>
               <span className="block text-emerald-400">여러분의 미래</span>
             </h1>
             <p
-              className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed animate-fade-in-up"
+              className="text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed animate-fade-in-up text-center mx-auto"
               style={{ animationDelay: "800ms" }}
             >
               정부가 인증한 신뢰할 수 있는 플랫폼에서 KAIST, 항공우주연구원, 대덕연구단지의 박사급 전문가들과 함께하는
               1:1 맞춤형 멘토링
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "1000ms" }}>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up justify-center" style={{ animationDelay: "1000ms" }}>
               <Link href="/mentoring">
                 <Button
                   size="lg"
@@ -425,6 +345,18 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Government Cooperation Notice */}
+      <div className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-6 border-t border-slate-700">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-lg font-semibold text-emerald-400 mb-2">
+            정부 협력 플랫폼
+          </p>
+          <p className="text-sm text-gray-300">
+            위 웹사이트는 정부와 협력하여 운영합니다.
+          </p>
+        </div>
+      </div>
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12">

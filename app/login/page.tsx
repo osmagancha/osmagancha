@@ -5,27 +5,36 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, User, Lock, Eye, EyeOff } from "lucide-react"
+import { ArrowLeft, User, Lock, Eye, EyeOff, Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { useAuth } from "@/hooks/use-auth"
 
 export default function LoginPage() {
   const router = useRouter()
+  const { login } = useAuth()
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   })
   const [showPassword, setShowPassword] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // 여기에 로그인 로직 추가
-    alert("로그인이 완료되었습니다!")
-    router.push("/")
+    setIsLoading(true)
+
+    const result = await login(formData.email, formData.password)
+    
+    if (result.success) {
+      router.push("/")
+    }
+    
+    setIsLoading(false)
   }
 
   return (
@@ -108,9 +117,17 @@ export default function LoginPage() {
 
               <Button
                 type="submit"
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 text-lg font-semibold hover:scale-105 transition-all duration-300"
+                disabled={isLoading}
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 text-lg font-semibold hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                로그인
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    로그인 중...
+                  </>
+                ) : (
+                  '로그인'
+                )}
               </Button>
 
               <div className="text-center">

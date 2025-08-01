@@ -1,0 +1,36 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leaf1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#20B2AA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#20B2AA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leaf2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leaf3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#20B2AA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#20B2AA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 배경 원 -->
+  <circle cx="32" cy="32" r="30" fill="white" stroke="#003876" stroke-width="2"/>
+  
+  <!-- 외부 텍스트 -->
+  <text x="32" y="12" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" font-weight="bold" fill="#003876">대전광역시교육청</text>
+  <text x="32" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="3" font-weight="bold" fill="#003876">Daejeon Metropolitan</text>
+  <text x="32" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="3" font-weight="bold" fill="#003876">Office of Education</text>
+  
+  <!-- 중앙 파란색 원 -->
+  <circle cx="32" cy="32" r="18" fill="#003876"/>
+  
+  <!-- 중앙 그래픽 - 세 개의 수평 직사각형 (E자 모양) -->
+  <rect x="20" y="26" width="24" height="3" fill="url(#leaf1)" rx="1"/>
+  <rect x="20" y="31" width="24" height="3" fill="url(#leaf2)" rx="1"/>
+  <rect x="20" y="36" width="24" height="3" fill="url(#leaf3)" rx="1"/>
+</svg> 

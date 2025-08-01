@@ -52,10 +52,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Government Partnership */}
-        <div className="mb-16 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-          <GovernmentPartnership />
-        </div>
+
 
         {/* Mission & Vision */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
