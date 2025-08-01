@@ -10,7 +10,7 @@ interface RippleButtonProps {
   onClick?: () => void
   className?: string
   variant?: "default" | "outline" | "ghost"
-  size?: "sm" | "md" | "lg"
+  size?: "default" | "sm" | "lg" | "icon"
 }
 
 export function RippleButton({
@@ -18,7 +18,7 @@ export function RippleButton({
   onClick,
   className = "",
   variant = "default",
-  size = "md",
+  size = "default",
 }: RippleButtonProps) {
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([])
 
